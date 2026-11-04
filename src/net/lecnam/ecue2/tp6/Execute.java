@@ -10,9 +10,9 @@ public class Execute {
 
         //exercice2();
 
-        exercice3();
+        //exercice3();
 
-        //exercice4();
+        exercice4();
 
         //exercice5();
 
