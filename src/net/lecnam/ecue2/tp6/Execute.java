@@ -42,8 +42,20 @@ public class Execute {
     }
 
     private static void exercice4(){
+        Etudiant etudiant = new Etudiant("123456789","toto","tati");
+        Etudiant etudiant2 = new Etudiant("987654321","tata","tati");
 
+        Etudiant[] etudiants = new Etudiant[2];
+        etudiants[0] = etudiant;
+        etudiants[1] = etudiant2;
 
+        EtudiantService etudiantService = new EtudiantService();
+
+        try {
+            etudiantService.sauve(etudiants, "etudiants.csv");
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void exercice5(){

@@ -11,16 +11,12 @@ public class EtudiantService {
     public void sauve(Etudiant[] etudiants, String cheminCompletFichier) throws IOException {
         Path chemin = Paths.get(cheminCompletFichier);
 
-        if (Files.exists(chemin)) {
-            Files.delete(chemin);
-        }
-
+        Files.deleteIfExists(chemin);
         Files.createFile(chemin);
 
         for (Etudiant etudiant : etudiants) {
             if (etudiant != null) {
-                String ligne = etudiant.toString();
-                Files.writeString(chemin, ligne, StandardOpenOption.APPEND);
+                Files.writeString(chemin, etudiant.toString(), StandardOpenOption.APPEND);
             }
         }
     }
